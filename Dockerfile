@@ -1,11 +1,29 @@
-# clean base image containing only comfyui, comfy-cli and comfyui-manager
 FROM runpod/worker-comfyui:5.5.0-base
 
-# install custom nodes into comfyui
-# (no custom registry-verified nodes in this workflow)
-
-# download models into comfyui
-RUN comfy model download --url https://civitai.com/api/download/models/2288507?type=Model&format=SafeTensor&size=pruned&fp=fp8&token=f7908f562aa30c3b3ca991ce206c8e3a --relative-path models/checkpoints --filename chrome-finetune.safetensors
-
-# copy all input data (like images or videos) into comfyui (uncomment and adjust if needed)
-# COPY input/ /comfyui/input/
+# Create entrypoint inline (no external files)
+ENTRYPOINT ["/bin/bash", "-c", "\
+  set -e; \
+  \
+  # Ensure MODEL_URL is provided
+  if [ -z \"$MODEL_URL\" ]; then \
+    echo 'ERROR: MODEL_URL environment variable is not set.'; \
+    exit 1; \
+  fi; \
+  \
+  MODEL_FILE=${MODEL_FILE:-chrome-finetune.safetensors}; \
+  TARGET_PATH=/comfyui/models/checkpoints/$MODEL_FILE; \
+  \
+  # Download only if missing
+  if [ ! -f \"$TARGET_PATH\" ]; then \
+    echo 'Downloading model from: '$MODEL_URL; \
+    comfy model download \
+      --url \"$MODEL_URL\" \
+      --relative-path models/checkpoints \
+      --filename \"$MODEL_FILE\"; \
+  else \
+    echo 'Model already exists at: '$TARGET_PATH' — skipping download.'; \
+  fi; \
+  \
+  echo 'Starting ComfyUI...'; \
+  exec /start.sh \
+"]
