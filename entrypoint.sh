@@ -1,6 +1,12 @@
 #!/bin/bash
 set -e
 
+if [ "$_MODEL_DOWNLOADED" = "1" ]; then
+    exec "$@"
+fi
+
+export _MODEL_DOWNLOADED=1
+
 CHECKPOINTS_DIR="/workspace/runpod-slim/ComfyUI/models/checkpoints"
 
 if [ -z "$MODEL_URL" ]; then
@@ -46,5 +52,15 @@ else
 fi
 
 echo "[entrypoint] Model download check complete. Starting base image startup script..."
-exec "$@"
+
+if [ $# -eq 0 ]; then
+    if [ -f "/start.sh" ]; then
+        exec /start.sh
+    else
+        echo "[entrypoint] Error: No command provided and /start.sh not found."
+        exit 1
+    fi
+else
+    exec "$@"
+fi
 
