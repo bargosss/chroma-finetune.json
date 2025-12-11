@@ -1,8 +1,8 @@
 FROM runpod/comfyui:1.2.1
 
-# Copy and set up start2.sh script
-COPY start2.sh /start2.sh
-RUN chmod +x /start2.sh
+# Copy entrypoint script that downloads model before starting ComfyUI
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
-# Run start2.sh when container starts
-CMD ["/start2.sh"]
+# Use entrypoint to download model, then exec the base image's CMD
+ENTRYPOINT ["/entrypoint.sh"]
