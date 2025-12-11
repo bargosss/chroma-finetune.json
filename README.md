@@ -1,4 +1,4 @@
-# chroma-finetune.json
+# chroma-finetune.json edit test 1
 
 Dockerized ComfyUI workflow: default wf.json
 
