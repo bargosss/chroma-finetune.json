@@ -35,8 +35,8 @@ if [ $# -eq 0 ]; then
             echo "[entrypoint] Model URL: $MODEL_DOWNLOAD_URL"
             echo "[entrypoint] Target path: $MODEL_DOWNLOAD_PATH"
             
-            nohup bash -c "
-                set -e
+            bash -c "
+                exec > >(tee -a /proc/1/fd/1) 2>&1
                 echo '[entrypoint] Background download process started (PID: \$\$)'
                 echo '[entrypoint] Waiting for ComfyUI directory to be created...'
                 COUNTER=0
@@ -81,9 +81,12 @@ if [ $# -eq 0 ]; then
                 else
                     echo '[entrypoint] Model file already exists at $MODEL_DOWNLOAD_PATH. Skipping download.'
                 fi
-            " > /proc/1/fd/1 2>&1 &
-            echo "[entrypoint] Background download process started with PID: $!"
+            " &
+            DOWNLOAD_PID=$!
+            echo "[entrypoint] Background download process started with PID: $DOWNLOAD_PID"
+            disown $DOWNLOAD_PID
         else
+            echo "[entrypoint] DEBUG: MODEL_DOWNLOAD_URL='$MODEL_DOWNLOAD_URL', MODEL_DOWNLOAD_PATH='$MODEL_DOWNLOAD_PATH'"
             echo "[entrypoint] MODEL_DOWNLOAD_URL or MODEL_DOWNLOAD_PATH not set. Skipping background download."
         fi
         exec /start.sh

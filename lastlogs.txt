@@ -1,0 +1,557 @@
+2025-12-11T20:32:26.447890670Z [entrypoint] MODEL_URL is set: https://civitai.com/api/download/models/2288507?type=Model&format=SafeTensor&size=pruned&fp=fp8&token=f7908f562aa30c3b3ca991ce206c8e3a
+2025-12-11T20:32:26.470212866Z [entrypoint] Will download to: /workspace/runpod-slim/ComfyUI/models/checkpoints/2288507
+2025-12-11T20:32:26.470229337Z [entrypoint] Starting base image startup script...
+2025-12-11T20:32:26.508660341Z DSA key fingerprint:
+2025-12-11T20:32:26.515454142Z 1024 SHA256:ZCev/oWouj1+SlSM80zJJJV8AzqG9xCcW4+ypyj8hcs root@c47090b58eb4 (DSA)
+2025-12-11T20:32:26.532958024Z Exporting environment variables...
+2025-12-11T20:32:26.677642686Z Initializing FileBrowser...
+2025-12-11T20:32:26.743153314Z 2025/12/11 20:32:26 No config file used
+2025-12-11T20:32:26.744287210Z 2025/12/11 20:32:26 Using database: /workspace/runpod-slim/filebrowser.db
+2025-12-11T20:32:26.783382257Z Congratulations! You've set up your database to use with File Browser.
+2025-12-11T20:32:26.783388298Z Now add your first user via 'filebrowser users add' and then you just
+2025-12-11T20:32:26.783393889Z need to call the main command to boot up the server.
+2025-12-11T20:32:26.783399490Z Sign up:                  false
+2025-12-11T20:32:26.783405110Z Hide Login Button:        false
+2025-12-11T20:32:26.783410270Z Create User Dir:          false
+2025-12-11T20:32:26.783415340Z Minimum Password Length:  12
+2025-12-11T20:32:26.783420510Z Auth Method:              json
+2025-12-11T20:32:26.783425760Z Shell:
+2025-12-11T20:32:26.783436039Z Branding:
+2025-12-11T20:32:26.783442001Z   Name:
+2025-12-11T20:32:26.783448292Z   Files override:
+2025-12-11T20:32:26.783453873Z   Disable external links:              false
+2025-12-11T20:32:26.783459965Z   Disable used disk percentage graph:  false
+2025-12-11T20:32:26.783465104Z   Color:
+2025-12-11T20:32:26.783470324Z   Theme:
+2025-12-11T20:32:26.783480384Z Server:
+2025-12-11T20:32:26.783485924Z   Log:                       stdout
+2025-12-11T20:32:26.783491244Z   Port:                      8080
+2025-12-11T20:32:26.783497696Z   Base URL:
+2025-12-11T20:32:26.783504089Z   Root:                      .
+2025-12-11T20:32:26.783520700Z   Socket:
+2025-12-11T20:32:26.783527513Z   Address:                   127.0.0.1
+2025-12-11T20:32:26.783534016Z   TLS Cert:
+2025-12-11T20:32:26.783540207Z   TLS Key:
+2025-12-11T20:32:26.783546098Z   Token Expiration Time:     2h
+2025-12-11T20:32:26.783551248Z   Exec Enabled:              false
+2025-12-11T20:32:26.783556408Z   Thumbnails Enabled:        true
+2025-12-11T20:32:26.783561999Z   Resize Preview:            true
+2025-12-11T20:32:26.783567068Z   Type Detection by Header:  true
+2025-12-11T20:32:26.783577097Z TUS:
+2025-12-11T20:32:26.783582317Z   Chunk size:   10485760
+2025-12-11T20:32:26.783588289Z   Retry count:  5
+2025-12-11T20:32:26.783598348Z Defaults:
+2025-12-11T20:32:26.783603628Z   Scope:                                 .
+2025-12-11T20:32:26.783609118Z   HideDotfiles:                          false
+2025-12-11T20:32:26.783614489Z   Locale:                                en
+2025-12-11T20:32:26.783619658Z   View mode:                             list
+2025-12-11T20:32:26.783625139Z   Single Click:                          false
+2025-12-11T20:32:26.783630349Z   File Creation Mode:                    0o640
+2025-12-11T20:32:26.783636300Z   Directory Creation Mode:               0o750
+2025-12-11T20:32:26.783646069Z   Commands:
+2025-12-11T20:32:26.783652120Z   Ace editor syntax highlighting theme:
+2025-12-11T20:32:26.783658101Z   Sorting:
+2025-12-11T20:32:26.783663722Z     By:   name
+2025-12-11T20:32:26.783668832Z     Asc:  false
+2025-12-11T20:32:26.783673882Z   Permissions:
+2025-12-11T20:32:26.783679001Z     Admin:     false
+2025-12-11T20:32:26.783684111Z     Execute:   true
+2025-12-11T20:32:26.783689211Z     Create:    true
+2025-12-11T20:32:26.783694170Z     Rename:    true
+2025-12-11T20:32:26.783699109Z     Modify:    true
+2025-12-11T20:32:26.783704109Z     Delete:    true
+2025-12-11T20:32:26.783727654Z     Share:     true
+2025-12-11T20:32:26.783733094Z     Download:  true
+2025-12-11T20:32:26.783743033Z Auther configuration (raw):
+2025-12-11T20:32:26.783753082Z {
+2025-12-11T20:32:26.783758322Z   "recaptcha": null
+2025-12-11T20:32:26.783763562Z }
+2025-12-11T20:32:26.839136348Z 2025/12/11 20:32:26 No config file used
+2025-12-11T20:32:26.840315912Z 2025/12/11 20:32:26 Using database: /workspace/runpod-slim/filebrowser.db
+2025-12-11T20:32:26.864798897Z Sign up:                  false
+2025-12-11T20:32:26.864835507Z Hide Login Button:        false
+2025-12-11T20:32:26.864841578Z Create User Dir:          false
+2025-12-11T20:32:26.864846848Z Minimum Password Length:  12
+2025-12-11T20:32:26.864852078Z Auth Method:              json
+2025-12-11T20:32:26.864857308Z Shell:
+2025-12-11T20:32:26.864867678Z Branding:
+2025-12-11T20:32:26.864873809Z   Name:
+2025-12-11T20:32:26.864879630Z   Files override:
+2025-12-11T20:32:26.864885051Z   Disable external links:              false
+2025-12-11T20:32:26.864890211Z   Disable used disk percentage graph:  false
+2025-12-11T20:32:26.864896863Z   Color:
+2025-12-11T20:32:26.864903907Z   Theme:
+2025-12-11T20:32:26.864917212Z Server:
+2025-12-11T20:32:26.864923865Z   Log:                       stdout
+2025-12-11T20:32:26.864930377Z   Port:                      8080
+2025-12-11T20:32:26.864936939Z   Base URL:
+2025-12-11T20:32:26.864943262Z   Root:                      .
+2025-12-11T20:32:26.864957418Z   Socket:
+2025-12-11T20:32:26.864964522Z   Address:                   0.0.0.0
+2025-12-11T20:32:26.864971044Z   TLS Cert:
+2025-12-11T20:32:26.864977727Z   TLS Key:
+2025-12-11T20:32:26.864984921Z   Token Expiration Time:     2h
+2025-12-11T20:32:26.864992074Z   Exec Enabled:              false
+2025-12-11T20:32:26.864998988Z   Thumbnails Enabled:        true
+2025-12-11T20:32:26.865004107Z   Resize Preview:            true
+2025-12-11T20:32:26.865009197Z   Type Detection by Header:  true
+2025-12-11T20:32:26.865019226Z TUS:
+2025-12-11T20:32:26.865024366Z   Chunk size:   10485760
+2025-12-11T20:32:26.865030578Z   Retry count:  5
+2025-12-11T20:32:26.865040797Z Defaults:
+2025-12-11T20:32:26.865046057Z   Scope:                                 .
+2025-12-11T20:32:26.865051317Z   HideDotfiles:                          false
+2025-12-11T20:32:26.865056677Z   Locale:                                en
+2025-12-11T20:32:26.865061997Z   View mode:                             list
+2025-12-11T20:32:26.865067067Z   Single Click:                          false
+2025-12-11T20:32:26.865072337Z   File Creation Mode:                    0o640
+2025-12-11T20:32:26.865077617Z   Directory Creation Mode:               0o750
+2025-12-11T20:32:26.865083087Z   Commands:
+2025-12-11T20:32:26.865088297Z   Ace editor syntax highlighting theme:
+2025-12-11T20:32:26.865095671Z   Sorting:
+2025-12-11T20:32:26.865101402Z     By:   name
+2025-12-11T20:32:26.865106833Z     Asc:  false
+2025-12-11T20:32:26.865112033Z   Permissions:
+2025-12-11T20:32:26.865117703Z     Admin:     false
+2025-12-11T20:32:26.865122803Z     Execute:   true
+2025-12-11T20:32:26.865127883Z     Create:    true
+2025-12-11T20:32:26.865132882Z     Rename:    true
+2025-12-11T20:32:26.865137882Z     Modify:    true
+2025-12-11T20:32:26.865142901Z     Delete:    true
+2025-12-11T20:32:26.865147891Z     Share:     true
+2025-12-11T20:32:26.865154143Z     Download:  true
+2025-12-11T20:32:26.865297465Z Auther configuration (raw):
+2025-12-11T20:32:26.865309408Z {
+2025-12-11T20:32:26.865315279Z   "recaptcha": null
+2025-12-11T20:32:26.865320860Z }
+2025-12-11T20:32:26.920267435Z 2025/12/11 20:32:26 No config file used
+2025-12-11T20:32:26.921095801Z 2025/12/11 20:32:26 Using database: /workspace/runpod-slim/filebrowser.db
+2025-12-11T20:32:26.944803531Z Sign up:                  false
+2025-12-11T20:32:26.944872603Z Hide Login Button:        false
+2025-12-11T20:32:26.944892711Z Create User Dir:          false
+2025-12-11T20:32:26.944899233Z Minimum Password Length:  12
+2025-12-11T20:32:26.944905405Z Auth Method:              json
+2025-12-11T20:32:26.944911607Z Shell:
+2025-12-11T20:32:26.944923259Z Branding:
+2025-12-11T20:32:26.944928800Z   Name:
+2025-12-11T20:32:26.944934160Z   Files override:
+2025-12-11T20:32:26.944942215Z   Disable external links:              false
+2025-12-11T20:32:26.944947565Z   Disable used disk percentage graph:  false
+2025-12-11T20:32:26.944952775Z   Color:
+2025-12-11T20:32:26.944957845Z   Theme:
+2025-12-11T20:32:26.944968856Z Server:
+2025-12-11T20:32:26.944974276Z   Log:                       stdout
+2025-12-11T20:32:26.944979526Z   Port:                      8080
+2025-12-11T20:32:26.944984616Z   Base URL:
+2025-12-11T20:32:26.944991779Z   Root:                      .
+2025-12-11T20:32:26.944997621Z   Socket:
+2025-12-11T20:32:26.945002901Z   Address:                   0.0.0.0
+2025-12-11T20:32:26.945009293Z   TLS Cert:
+2025-12-11T20:32:26.945039109Z   TLS Key:
+2025-12-11T20:32:26.945045191Z   Token Expiration Time:     2h
+2025-12-11T20:32:26.945061252Z   Exec Enabled:              false
+2025-12-11T20:32:26.945077172Z   Thumbnails Enabled:        true
+2025-12-11T20:32:26.945084616Z   Resize Preview:            true
+2025-12-11T20:32:26.945089966Z   Type Detection by Header:  true
+2025-12-11T20:32:26.945102029Z TUS:
+2025-12-11T20:32:26.945133870Z   Chunk size:   10485760
+2025-12-11T20:32:26.945140112Z   Retry count:  5
+2025-12-11T20:32:26.945150511Z Defaults:
+2025-12-11T20:32:26.945194245Z   Scope:                                 .
+2025-12-11T20:32:26.945217509Z   HideDotfiles:                          false
+2025-12-11T20:32:26.945226426Z   Locale:                                en
+2025-12-11T20:32:26.945232076Z   View mode:                             list
+2025-12-11T20:32:26.945239100Z   Single Click:                          false
+2025-12-11T20:32:26.945255180Z   File Creation Mode:                    0o640
+2025-12-11T20:32:26.945280589Z   Directory Creation Mode:               0o750
+2025-12-11T20:32:26.945290518Z   Commands:
+2025-12-11T20:32:26.945298874Z   Ace editor syntax highlighting theme:
+2025-12-11T20:32:26.945305366Z   Sorting:
+2025-12-11T20:32:26.945325925Z     By:   name
+2025-12-11T20:32:26.945333119Z     Asc:  false
+2025-12-11T20:32:26.945339411Z   Permissions:
+2025-12-11T20:32:26.945354750Z     Admin:     false
+2025-12-11T20:32:26.945394065Z     Execute:   true
+2025-12-11T20:32:26.945402280Z     Create:    true
+2025-12-11T20:32:26.945436375Z     Rename:    true
+2025-12-11T20:32:26.945445643Z     Modify:    true
+2025-12-11T20:32:26.945452566Z     Delete:    true
+2025-12-11T20:32:26.945458387Z     Share:     true
+2025-12-11T20:32:26.945464759Z     Download:  true
+2025-12-11T20:32:26.945509334Z Auther configuration (raw):
+2025-12-11T20:32:26.945520064Z {
+2025-12-11T20:32:26.945525905Z   "recaptcha": null
+2025-12-11T20:32:26.945531486Z }
+2025-12-11T20:32:27.004186234Z 2025/12/11 20:32:27 No config file used
+2025-12-11T20:32:27.005364525Z 2025/12/11 20:32:27 Using database: /workspace/runpod-slim/filebrowser.db
+2025-12-11T20:32:27.025978642Z Sign up:                  false
+2025-12-11T20:32:27.025999832Z Hide Login Button:        false
+2025-12-11T20:32:27.026005283Z Create User Dir:          false
+2025-12-11T20:32:27.026010433Z Minimum Password Length:  12
+2025-12-11T20:32:27.026016083Z Auth Method:              json
+2025-12-11T20:32:27.026021433Z Shell:
+2025-12-11T20:32:27.026031623Z Branding:
+2025-12-11T20:32:27.026037173Z   Name:
+2025-12-11T20:32:27.026044688Z   Files override:
+2025-12-11T20:32:27.026049918Z   Disable external links:              false
+2025-12-11T20:32:27.026056270Z   Disable used disk percentage graph:  false
+2025-12-11T20:32:27.026062542Z   Color:
+2025-12-11T20:32:27.026085976Z   Theme:
+2025-12-11T20:32:27.026096687Z Server:
+2025-12-11T20:32:27.026104271Z   Log:                       stdout
+2025-12-11T20:32:27.026110222Z   Port:                      8080
+2025-12-11T20:32:27.026132655Z   Base URL:
+2025-12-11T20:32:27.026153885Z   Root:                      /workspace
+2025-12-11T20:32:27.026180055Z   Socket:
+2025-12-11T20:32:27.026185676Z   Address:                   0.0.0.0
+2025-12-11T20:32:27.026190956Z   TLS Cert:
+2025-12-11T20:32:27.026220492Z   TLS Key:
+2025-12-11T20:32:27.026227385Z   Token Expiration Time:     2h
+2025-12-11T20:32:27.026232795Z   Exec Enabled:              false
+2025-12-11T20:32:27.026240791Z   Thumbnails Enabled:        true
+2025-12-11T20:32:27.026245991Z   Resize Preview:            true
+2025-12-11T20:32:27.026252763Z   Type Detection by Header:  true
+2025-12-11T20:32:27.026263454Z TUS:
+2025-12-11T20:32:27.026270237Z   Chunk size:   10485760
+2025-12-11T20:32:27.026313679Z   Retry count:  5
+2025-12-11T20:32:27.026335601Z Defaults:
+2025-12-11T20:32:27.026358214Z   Scope:                                 .
+2025-12-11T20:32:27.026364095Z   HideDotfiles:                          false
+2025-12-11T20:32:27.026392109Z   Locale:                                en
+2025-12-11T20:32:27.026409371Z   View mode:                             list
+2025-12-11T20:32:27.026429650Z   Single Click:                          false
+2025-12-11T20:32:27.026437234Z   File Creation Mode:                    0o640
+2025-12-11T20:32:27.026461671Z   Directory Creation Mode:               0o750
+2025-12-11T20:32:27.026478112Z   Commands:
+2025-12-11T20:32:27.026484905Z   Ace editor syntax highlighting theme:
+2025-12-11T20:32:27.026490215Z   Sorting:
+2025-12-11T20:32:27.026497118Z     By:   name
+2025-12-11T20:32:27.026516415Z     Asc:  false
+2025-12-11T20:32:27.026534069Z   Permissions:
+2025-12-11T20:32:27.026563585Z     Admin:     false
+2025-12-11T20:32:27.026572151Z     Execute:   true
+2025-12-11T20:32:27.026577681Z     Create:    true
+2025-12-11T20:32:27.026584344Z     Rename:    true
+2025-12-11T20:32:27.026600485Z     Modify:    true
+2025-12-11T20:32:27.026609171Z     Delete:    true
+2025-12-11T20:32:27.026625583Z     Share:     true
+2025-12-11T20:32:27.026635622Z     Download:  true
+2025-12-11T20:32:27.026681589Z Auther configuration (raw):
+2025-12-11T20:32:27.026692911Z {
+2025-12-11T20:32:27.026698992Z   "recaptcha": null
+2025-12-11T20:32:27.026704833Z }
+2025-12-11T20:32:27.081990403Z 2025/12/11 20:32:27 No config file used
+2025-12-11T20:32:27.082857783Z 2025/12/11 20:32:27 Using database: /workspace/runpod-slim/filebrowser.db
+2025-12-11T20:32:27.104991400Z Sign up:                  false
+2025-12-11T20:32:27.105021938Z Hide Login Button:        false
+2025-12-11T20:32:27.105027549Z Create User Dir:          false
+2025-12-11T20:32:27.105032769Z Minimum Password Length:  12
+2025-12-11T20:32:27.105037929Z Auth Method:              json
+2025-12-11T20:32:27.105043048Z Shell:
+2025-12-11T20:32:27.105053508Z Branding:
+2025-12-11T20:32:27.105058838Z   Name:
+2025-12-11T20:32:27.105064609Z   Files override:
+2025-12-11T20:32:27.105070070Z   Disable external links:              false
+2025-12-11T20:32:27.105075390Z   Disable used disk percentage graph:  false
+2025-12-11T20:32:27.105080419Z   Color:
+2025-12-11T20:32:27.105085599Z   Theme:
+2025-12-11T20:32:27.105096360Z Server:
+2025-12-11T20:32:27.105101750Z   Log:                       stdout
+2025-12-11T20:32:27.105107150Z   Port:                      8080
+2025-12-11T20:32:27.105112350Z   Base URL:
+2025-12-11T20:32:27.105117790Z   Root:                      /workspace
+2025-12-11T20:32:27.105123261Z   Socket:
+2025-12-11T20:32:27.105128290Z   Address:                   0.0.0.0
+2025-12-11T20:32:27.105138410Z   TLS Cert:
+2025-12-11T20:32:27.105143720Z   TLS Key:
+2025-12-11T20:32:27.105168838Z   Token Expiration Time:     2h
+2025-12-11T20:32:27.105174308Z   Exec Enabled:              false
+2025-12-11T20:32:27.105179448Z   Thumbnails Enabled:        true
+2025-12-11T20:32:27.105184407Z   Resize Preview:            true
+2025-12-11T20:32:27.105190098Z   Type Detection by Header:  true
+2025-12-11T20:32:27.105200327Z TUS:
+2025-12-11T20:32:27.105205527Z   Chunk size:   10485760
+2025-12-11T20:32:27.105210817Z   Retry count:  5
+2025-12-11T20:32:27.105221478Z Defaults:
+2025-12-11T20:32:27.105226718Z   Scope:                                 .
+2025-12-11T20:32:27.105232158Z   HideDotfiles:                          false
+2025-12-11T20:32:27.105237528Z   Locale:                                en
+2025-12-11T20:32:27.105242688Z   View mode:                             list
+2025-12-11T20:32:27.105247688Z   Single Click:                          false
+2025-12-11T20:32:27.105252677Z   File Creation Mode:                    0o640
+2025-12-11T20:32:27.105257626Z   Directory Creation Mode:               0o750
+2025-12-11T20:32:27.105265612Z   Commands:
+2025-12-11T20:32:27.105270721Z   Ace editor syntax highlighting theme:
+2025-12-11T20:32:27.105275711Z   Sorting:
+2025-12-11T20:32:27.105280760Z     By:   name
+2025-12-11T20:32:27.105285830Z     Asc:  false
+2025-12-11T20:32:27.105290830Z   Permissions:
+2025-12-11T20:32:27.105295789Z     Admin:     false
+2025-12-11T20:32:27.105300809Z     Execute:   true
+2025-12-11T20:32:27.105305908Z     Create:    true
+2025-12-11T20:32:27.105310838Z     Rename:    true
+2025-12-11T20:32:27.105315737Z     Modify:    true
+2025-12-11T20:32:27.105320646Z     Delete:    true
+2025-12-11T20:32:27.105325626Z     Share:     true
+2025-12-11T20:32:27.105330555Z     Download:  true
+2025-12-11T20:32:27.105340895Z Auther configuration (raw):
+2025-12-11T20:32:27.105351034Z {
+2025-12-11T20:32:27.105356404Z   "recaptcha": null
+2025-12-11T20:32:27.105362295Z }
+2025-12-11T20:32:27.160546272Z 2025/12/11 20:32:27 No config file used
+2025-12-11T20:32:27.161416638Z 2025/12/11 20:32:27 Using database: /workspace/runpod-slim/filebrowser.db
+2025-12-11T20:32:27.237671390Z ID  Username  Scope  Locale  V. Mode  S.Click  Admin  Execute  Create  Rename  Modify  Delete  Share  Download  Pwd Lock
+2025-12-11T20:32:27.237695225Z 1   admin     /      en      list     false    true   true     true    true    true    true    true   true      false
+2025-12-11T20:32:27.241075885Z Starting FileBrowser on port 8080...
+2025-12-11T20:32:27.245296012Z Starting Jupyter Lab on port 8888...
+2025-12-11T20:32:27.245762469Z Jupyter Lab started
+2025-12-11T20:32:27.252438797Z Created empty ComfyUI arguments file at /workspace/runpod-slim/comfyui_args.txt
+2025-12-11T20:32:27.253004022Z First time setup: Installing ComfyUI and dependencies...
+2025-12-11T20:32:27.267182198Z Cloning into 'ComfyUI'...
+2025-12-11T20:34:34.437571309Z Updating files:  25% (149/587)
+Updating files:  26% (153/587)
+Updating files:  27% (159/587)
+Updating files:  28% (165/587)
+Updating files:  29% (171/587)
+Updating files:  30% (177/587)
+Updating files:  31% (182/587)
+Updating files:  32% (188/587)
+Updating files:  33% (194/587)
+Updating files:  34% (200/587)
+Updating files:  35% (206/587)
+Updating files:  36% (212/587)
+Updating files:  37% (218/587)
+Updating files:  38% (224/587)
+Updating files:  39% (229/587)
+Updating files:  40% (235/587)
+Updating files:  41% (241/587)
+Updating files:  42% (247/587)
+Updating files:  43% (253/587)
+Updating files:  44% (259/587)
+Updating files:  45% (265/587)
+Updating files:  45% (269/587)
+Updating files:  46% (271/587)
+Updating files:  47% (276/587)
+Updating files:  48% (282/587)
+Updating files:  49% (288/587)
+Updating files:  50% (294/587)
+Updating files:  51% (300/587)
+Updating files:  52% (306/587)
+Updating files:  53% (312/587)
+Updating files:  54% (317/587)
+Updating files:  55% (323/587)
+Updating files:  56% (329/587)
+Updating files:  57% (335/587)
+Updating files:  58% (341/587)
+Updating files:  59% (347/587)
+Updating files:  60% (353/587)
+Updating files:  61% (359/587)
+Updating files:  62% (364/587)
+Updating files:  63% (370/587)
+Updating files:  64% (376/587)
+Updating files:  65% (382/587)
+Updating files:  66% (388/587)
+Updating files:  67% (394/587)
+Updating files:  68% (400/587)
+Updating files:  68% (405/587)
+Updating files:  69% (406/587)
+Updating files:  70% (411/587)
+Updating files:  71% (417/587)
+Updating files:  72% (423/587)
+Updating files:  73% (429/587)
+Updating files:  74% (435/587)
+Updating files:  75% (441/587)
+Updating files:  76% (447/587)
+Updating files:  77% (452/587)
+Updating files:  78% (458/587)
+Updating files:  79% (464/587)
+Updating files:  80% (470/587)
+Updating files:  81% (476/587)
+Updating files:  82% (482/587)
+Updating files:  83% (488/587)
+Updating files:  84% (494/587)
+Updating files:  85% (499/587)
+Updating files:  86% (505/587)
+Updating files:  87% (511/587)
+Updating files:  88% (517/587)
+Updating files:  89% (523/587)
+Updating files:  90% (529/587)
+Updating files:  91% (535/587)
+Updating files:  92% (541/587)
+Updating files:  93% (546/587)
+Updating files:  94% (552/587)
+Updating files:  95% (558/587)
+Updating files:  96% (564/587)
+Updating files:  97% (570/587)
+Updating files:  97% (575/587)
+Updating files:  98% (576/587)
+Updating files:  99% (582/587)
+Updating files: 100% (587/587)
+Updating files: 100% (587/587), done.
+2025-12-11T20:34:34.452238264Z Installing ComfyUI-Manager...
+2025-12-11T20:34:34.464987032Z Cloning into 'ComfyUI-Manager'...
+2025-12-11T20:35:01.366387704Z Installing ComfyUI-KJNodes...
+2025-12-11T20:35:01.374112957Z Cloning into 'ComfyUI-KJNodes'...
+2025-12-11T20:35:28.730388647Z Installing Civicomfy...
+2025-12-11T20:35:28.738284615Z Cloning into 'Civicomfy'...
+2025-12-11T20:35:31.205322427Z Installing ComfyUI-RunpodDirect...
+2025-12-11T20:35:31.212991844Z Cloning into 'ComfyUI-RunpodDirect'...
+2025-12-11T20:35:45.872449676Z Looking in links: /tmp/tmprzjar0im
+2025-12-11T20:35:45.872855518Z Requirement already satisfied: pip in ./.venv/lib/python3.12/site-packages (25.0.1)
+2025-12-11T20:35:48.534898809Z Requirement already satisfied: pip in ./.venv/lib/python3.12/site-packages (25.0.1)
+2025-12-11T20:35:52.724706486Z Collecting pip
+2025-12-11T20:35:57.912474548Z   Downloading pip-25.3-py3-none-any.whl.metadata (4.7 kB)
+2025-12-11T20:35:57.958388755Z Downloading pip-25.3-py3-none-any.whl (1.8 MB)
+2025-12-11T20:35:58.161152490Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 17.1 MB/s eta 0:00:00
+2025-12-11T20:35:58.472958959Z Installing collected packages: pip
+2025-12-11T20:35:58.473052798Z   Attempting uninstall: pip
+2025-12-11T20:35:58.478210678Z     Found existing installation: pip 25.0.1
+2025-12-11T20:35:59.245345406Z     Uninstalling pip-25.0.1:
+2025-12-11T20:35:59.332880453Z       Successfully uninstalled pip-25.0.1
+2025-12-11T20:36:09.369240204Z Successfully installed pip-25.3
+2025-12-11T20:36:13.785508537Z Base packages (torch, numpy, etc.) available from system site-packages
+2025-12-11T20:36:13.785553201Z Installing custom node dependencies...
+2025-12-11T20:36:13.789729244Z Checking dependencies for Civicomfy/...
+2025-12-11T20:36:13.806201844Z Starting ComfyUI with default arguments
+2025-12-11T20:36:18.815947969Z [START] Security scan
+2025-12-11T20:36:18.815971443Z [DONE] Security scan
+2025-12-11T20:36:18.815977204Z ## ComfyUI-Manager: installing dependencies done.
+2025-12-11T20:36:18.815982565Z ** ComfyUI startup time: 2025-12-11 20:36:18.171
+2025-12-11T20:36:18.815987865Z ** Platform: Linux
+2025-12-11T20:36:18.815993285Z ** Python version: 3.12.12 (main, Oct 10 2025, 08:52:57) [GCC 11.4.0]
+2025-12-11T20:36:18.815999347Z ** Python executable: /workspace/runpod-slim/ComfyUI/.venv/bin/python
+2025-12-11T20:36:18.816004827Z ** ComfyUI Path: /workspace/runpod-slim/ComfyUI
+2025-12-11T20:36:18.816010097Z ** ComfyUI Base Folder Path: /workspace/runpod-slim/ComfyUI
+2025-12-11T20:36:18.816015257Z ** User directory: /workspace/runpod-slim/ComfyUI/user
+2025-12-11T20:36:18.816020407Z ** ComfyUI-Manager config path: /workspace/runpod-slim/ComfyUI/user/__manager/config.ini
+2025-12-11T20:36:18.816025647Z ** Log path: /workspace/runpod-slim/ComfyUI/user/comfyui.log
+2025-12-11T20:36:20.817151559Z Prestartup times for custom nodes:
+2025-12-11T20:36:20.817174473Z    6.5 seconds: /workspace/runpod-slim/ComfyUI/custom_nodes/ComfyUI-Manager
+2025-12-11T20:36:22.833870980Z Checkpoint files will always be loaded safely.
+2025-12-11T20:36:23.835136993Z Total VRAM 16102 MB, total RAM 515612 MB
+2025-12-11T20:36:23.835164215Z pytorch version: 2.6.0+cu124
+2025-12-11T20:36:23.835170016Z Set vram state to: NORMAL_VRAM
+2025-12-11T20:36:23.835175937Z Device: cuda:0 NVIDIA RTX A4000 : cudaMallocAsync
+2025-12-11T20:36:23.835181488Z Using async weight offloading with 2 streams
+2025-12-11T20:36:23.835186618Z Enabled pinned memory 489830.0
+2025-12-11T20:36:25.836447327Z Using pytorch attention
+2025-12-11T20:36:31.839731557Z Python version: 3.12.12 (main, Oct 10 2025, 08:52:57) [GCC 11.4.0]
+2025-12-11T20:36:31.839773046Z ComfyUI version: 0.4.0
+2025-12-11T20:36:31.839778797Z ________________________________________________________________________
+2025-12-11T20:36:31.839783185Z WARNING WARNING WARNING WARNING WARNING
+2025-12-11T20:36:31.839791842Z Installed frontend version 1.30.6 is lower than the recommended version 1.34.8.
+2025-12-11T20:36:31.839800288Z Please install the updated requirements.txt file by running:
+2025-12-11T20:36:31.839804816Z /workspace/runpod-slim/ComfyUI/.venv/bin/python -m pip install -r /workspace/runpod-slim/ComfyUI/requirements.txt
+2025-12-11T20:36:31.839848329Z If you are on the portable package you can run: update\update_comfyui.bat to solve this problem.
+2025-12-11T20:36:31.839857406Z This error is happening because the ComfyUI frontend is no longer shipped as part of the main repo but as a pip package instead.
+2025-12-11T20:36:31.839861705Z ________________________________________________________________________
+2025-12-11T20:36:31.839866023Z [Prompt Server] web root: /usr/local/lib/python3.12/dist-packages/comfyui_frontend_package/static
+2025-12-11T20:36:32.840411085Z Total VRAM 16102 MB, total RAM 515612 MB
+2025-12-11T20:36:32.840433197Z pytorch version: 2.6.0+cu124
+2025-12-11T20:36:32.840438477Z Set vram state to: NORMAL_VRAM
+2025-12-11T20:36:32.840443186Z Device: cuda:0 NVIDIA RTX A4000 : cudaMallocAsync
+2025-12-11T20:36:32.840448086Z Using async weight offloading with 2 streams
+2025-12-11T20:36:32.840452684Z Enabled pinned memory 489830.0
+2025-12-11T20:36:35.842721587Z ------------------------------
+2025-12-11T20:36:35.842765671Z [Civicomfy Config Initialized]
+2025-12-11T20:36:35.842771662Z   - Plugin Root: /workspace/runpod-slim/ComfyUI/custom_nodes/Civicomfy
+2025-12-11T20:36:35.842777904Z   - Web Directory: /workspace/runpod-slim/ComfyUI/custom_nodes/Civicomfy/web
+2025-12-11T20:36:35.842783625Z   - ComfyUI Base Path: /workspace/runpod-slim/ComfyUI
+2025-12-11T20:36:35.842789466Z ------------------------------
+2025-12-11T20:36:35.842794716Z [Civicomfy Manager] Warning: ComfyUI folder_paths not available. Path validation/opening might be limited.
+2025-12-11T20:36:35.842800527Z [Manager] History file not found (/workspace/runpod-slim/ComfyUI/custom_nodes/Civicomfy/download_history.json). Starting with empty history.
+2025-12-11T20:36:35.842824032Z Civitai Download Manager starting (Max Concurrent: 3).
+2025-12-11T20:36:35.842833850Z [Manager] Process queue thread started.
+2025-12-11T20:36:35.842839591Z [Civicomfy] All server route modules loaded.
+2025-12-11T20:36:35.842844691Z [Civicomfy] Core modules imported successfully.
+2025-12-11T20:36:35.842850171Z ------------------------------
+2025-12-11T20:36:35.842855211Z --- Civicomfy Custom Extension Loaded ---
+2025-12-11T20:36:35.842860972Z - Serving frontend files from: /workspace/runpod-slim/ComfyUI/custom_nodes/Civicomfy/web (Relative: ./web)
+2025-12-11T20:36:35.842866172Z - Download Manager Initialized: Yes
+2025-12-11T20:36:35.842871332Z - API Endpoints Registered: Yes
+2025-12-11T20:36:35.842876431Z - Frontend files found.
+2025-12-11T20:36:35.842881942Z - Look for 'Civicomfy' button in the ComfyUI menu.
+2025-12-11T20:36:35.842887072Z ------------------------------
+2025-12-11T20:36:35.842892221Z Warning: Could not resolve path for type 'checkpoints' via folder_paths. Falling back to models_dir.
+2025-12-11T20:36:35.842898133Z Warning: Could not resolve path for type 'diffusers' via folder_paths. Falling back to models_dir.
+2025-12-11T20:36:35.842927408Z Warning: Could not resolve path for type 'unet' via folder_paths. Falling back to models_dir.
+2025-12-11T20:36:35.842934001Z Warning: Could not resolve path for type 'loras' via folder_paths. Falling back to models_dir.
+2025-12-11T20:36:35.842939972Z Warning: Could not resolve path for type 'loras' via folder_paths. Falling back to models_dir.
+2025-12-11T20:36:35.842945883Z Warning: Could not resolve path for type 'loras' via folder_paths. Falling back to models_dir.
+2025-12-11T20:36:35.842951735Z Warning: Could not resolve path for type 'vae' via folder_paths. Falling back to models_dir.
+2025-12-11T20:36:35.842957706Z Warning: Could not resolve path for type 'embeddings' via folder_paths. Falling back to models_dir.
+2025-12-11T20:36:35.842963928Z Warning: Could not resolve path for type 'hypernetworks' via folder_paths. Falling back to models_dir.
+2025-12-11T20:36:35.842971693Z Warning: Could not resolve path for type 'controlnet' via folder_paths. Falling back to models_dir.
+2025-12-11T20:36:35.842977764Z Warning: Could not resolve path for type 'upscale_models' via folder_paths. Falling back to models_dir.
+2025-12-11T20:36:35.842983836Z Warning: Could not resolve path for type 'motion_models' via folder_paths. Falling back to models_dir.
+2025-12-11T20:36:35.842989777Z Warning: Could not resolve path for type 'poses' via folder_paths. Falling back to models_dir.
+2025-12-11T20:36:35.842995708Z Warning: Could not resolve path for type 'wildcards' via folder_paths. Falling back to models_dir.
+2025-12-11T20:36:35.843001650Z [Civicomfy] Verified model type directories:
+2025-12-11T20:36:35.843007631Z   - checkpoint: /workspace/runpod-slim/ComfyUI/models/checkpoints
+2025-12-11T20:36:35.843013592Z   - diffusionmodels: /workspace/runpod-slim/ComfyUI/models/diffusers
+2025-12-11T20:36:35.843019534Z   - unet: /workspace/runpod-slim/ComfyUI/models/unet
+2025-12-11T20:36:35.843025405Z   - lora: /workspace/runpod-slim/ComfyUI/models/loras
+2025-12-11T20:36:35.843034933Z   - locon: /workspace/runpod-slim/ComfyUI/models/loras
+2025-12-11T20:36:35.843040904Z   - lycoris: /workspace/runpod-slim/ComfyUI/models/loras
+2025-12-11T20:36:35.843046866Z   - vae: /workspace/runpod-slim/ComfyUI/models/vae
+2025-12-11T20:36:35.843052697Z   - embedding: /workspace/runpod-slim/ComfyUI/models/embeddings
+2025-12-11T20:36:35.843058668Z   - hypernetwork: /workspace/runpod-slim/ComfyUI/models/hypernetworks
+2025-12-11T20:36:35.843064689Z   - controlnet: /workspace/runpod-slim/ComfyUI/models/controlnet
+2025-12-11T20:36:35.843070781Z   - upscaler: /workspace/runpod-slim/ComfyUI/models/upscale_models
+2025-12-11T20:36:35.843076712Z   - motionmodule: /workspace/runpod-slim/ComfyUI/models/motion_models
+2025-12-11T20:36:35.843082684Z   - poses: /workspace/runpod-slim/ComfyUI/models/poses
+2025-12-11T20:36:35.843088545Z   - wildcards: /workspace/runpod-slim/ComfyUI/models/wildcards
+2025-12-11T20:36:35.843094496Z   - other: /workspace/runpod-slim/ComfyUI/models/other
+2025-12-11T20:36:36.843476158Z ### Loading: ComfyUI-Manager (V3.38.1)
+2025-12-11T20:36:36.843503279Z [ComfyUI-Manager] network_mode: public
+2025-12-11T20:36:36.843509000Z ### ComfyUI Version: v0.4.0-7-gf8321eb5 | Released on '2025-12-11'
+2025-12-11T20:36:36.843520282Z Import times for custom nodes:
+2025-12-11T20:36:36.843526804Z    0.0 seconds: /workspace/runpod-slim/ComfyUI/custom_nodes/websocket_image_save.py
+2025-12-11T20:36:36.843532655Z    0.0 seconds: /workspace/runpod-slim/ComfyUI/custom_nodes/ComfyUI-RunpodDirect
+2025-12-11T20:36:36.843537765Z    0.4 seconds: /workspace/runpod-slim/ComfyUI/custom_nodes/Civicomfy
+2025-12-11T20:36:36.843542885Z    0.5 seconds: /workspace/runpod-slim/ComfyUI/custom_nodes/ComfyUI-Manager
+2025-12-11T20:36:36.843548205Z    0.5 seconds: /workspace/runpod-slim/ComfyUI/custom_nodes/ComfyUI-KJNodes
+2025-12-11T20:36:36.843558304Z [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/alter-list.json
+2025-12-11T20:36:37.844764163Z [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json
+2025-12-11T20:36:37.844928676Z [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json
+2025-12-11T20:36:37.844940939Z Context impl SQLiteImpl.
+2025-12-11T20:36:37.844947662Z Will assume non-transactional DDL.
+2025-12-11T20:36:37.844954245Z No target revision found.
+2025-12-11T20:36:37.844960456Z ________________________________________________________________________
+2025-12-11T20:36:37.844967780Z WARNING WARNING WARNING WARNING WARNING
+2025-12-11T20:36:37.844979863Z Installed frontend version 1.30.6 is lower than the recommended version 1.34.8.
+2025-12-11T20:36:37.844992086Z Please install the updated requirements.txt file by running:
+2025-12-11T20:36:37.844998278Z /workspace/runpod-slim/ComfyUI/.venv/bin/python -m pip install -r /workspace/runpod-slim/ComfyUI/requirements.txt
+2025-12-11T20:36:37.845004430Z If you are on the portable package you can run: update\update_comfyui.bat to solve this problem.
+2025-12-11T20:36:37.845016513Z This error is happening because the ComfyUI frontend is no longer shipped as part of the main repo but as a pip package instead.
+2025-12-11T20:36:37.845022534Z ________________________________________________________________________
+2025-12-11T20:36:37.845028576Z Starting server
+2025-12-11T20:36:37.845040929Z To see the GUI go to: http://0.0.0.0:8188
+2025-12-11T20:36:40.846396034Z [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json
+2025-12-11T20:36:40.846424849Z [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json
+2025-12-11T20:36:48.850590637Z FETCH ComfyRegistry Data: 5/112
+2025-12-11T20:37:09.861428581Z FETCH ComfyRegistry Data: 10/112
+2025-12-11T20:37:21.867506267Z FETCH ComfyRegistry Data: 15/112
+2025-12-11T20:37:31.872713588Z FETCH ComfyRegistry Data: 20/112
+2025-12-11T20:37:40.877503089Z FETCH ComfyRegistry Data: 25/112
+2025-12-11T20:37:53.884711210Z FETCH ComfyRegistry Data: 30/112
+2025-12-11T20:38:02.889742260Z FETCH ComfyRegistry Data: 35/112
+2025-12-11T20:38:14.896619035Z FETCH ComfyRegistry Data: 40/112
+2025-12-11T20:38:20.908579545Z FETCH ComfyRegistry Data: 45/112
+2025-12-11T20:38:28.913337066Z FETCH ComfyRegistry Data: 50/112
+2025-12-11T20:38:33.917323711Z FETCH ComfyRegistry Data: 55/112
+2025-12-11T20:38:38.920158280Z FETCH ComfyRegistry Data: 60/112
+2025-12-11T20:38:43.923266872Z FETCH ComfyRegistry Data: 65/112
+2025-12-11T20:38:52.929772008Z FETCH ComfyRegistry Data: 70/112
+2025-12-11T20:38:56.933114528Z FETCH ComfyRegistry Data: 75/112
+2025-12-11T20:39:05.938673346Z FETCH ComfyRegistry Data: 80/112
+2025-12-11T20:39:13.943935577Z FETCH ComfyRegistry Data: 85/112
+2025-12-11T20:39:18.947524913Z FETCH ComfyRegistry Data: 90/112
+2025-12-11T20:39:24.952066184Z FETCH ComfyRegistry Data: 95/112
+2025-12-11T20:39:29.955707915Z FETCH ComfyRegistry Data: 100/112
+2025-12-11T20:39:34.960427073Z FETCH ComfyRegistry Data: 105/112
+2025-12-11T20:39:43.966595859Z FETCH ComfyRegistry Data: 110/112
+2025-12-11T20:39:45.968356879Z FETCH ComfyRegistry Data [DONE]
+2025-12-11T20:39:45.968401584Z [ComfyUI-Manager] default cache updated: https://api.comfy.org/nodes
+2025-12-11T20:39:46.969880823Z FETCH DATA from: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json [DONE]
+2025-12-11T20:39:46.969903877Z [ComfyUI-Manager] All startup tasks have been completed.
