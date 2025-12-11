@@ -12,6 +12,7 @@ CHECKPOINTS_DIR="/workspace/runpod-slim/ComfyUI/models/checkpoints"
 if [ -z "$MODEL_URL" ]; then
     echo "[entrypoint] Warning: MODEL_URL is not set or is empty. Skipping model download."
 else
+    echo "[entrypoint] MODEL_URL is set: $MODEL_URL"
     URL_WITHOUT_QUERY="${MODEL_URL%%\?*}"
     FILENAME=$(basename "$URL_WITHOUT_QUERY")
     
@@ -22,6 +23,7 @@ else
     FILEPATH="$CHECKPOINTS_DIR/$FILENAME"
     export MODEL_DOWNLOAD_URL="$MODEL_URL"
     export MODEL_DOWNLOAD_PATH="$FILEPATH"
+    echo "[entrypoint] Will download to: $FILEPATH"
 fi
 
 echo "[entrypoint] Starting base image startup script..."
@@ -30,23 +32,59 @@ if [ $# -eq 0 ]; then
     if [ -f "/start.sh" ]; then
         if [ -n "$MODEL_DOWNLOAD_URL" ] && [ -n "$MODEL_DOWNLOAD_PATH" ]; then
             echo "[entrypoint] Model download will happen after ComfyUI is initialized..."
-            (
-                while [ ! -d "/workspace/runpod-slim/ComfyUI" ]; do
+            echo "[entrypoint] Model URL: $MODEL_DOWNLOAD_URL"
+            echo "[entrypoint] Target path: $MODEL_DOWNLOAD_PATH"
+            
+            nohup bash -c "
+                set -e
+                echo '[entrypoint] Background download process started (PID: \$\$)'
+                echo '[entrypoint] Waiting for ComfyUI directory to be created...'
+                COUNTER=0
+                while [ ! -d '/workspace/runpod-slim/ComfyUI' ] && [ \$COUNTER -lt 300 ]; do
                     sleep 2
+                    COUNTER=\$((COUNTER + 2))
+                    if [ \$((COUNTER % 10)) -eq 0 ]; then
+                        echo '[entrypoint] Still waiting for ComfyUI directory... (\$COUNTER seconds)'
+                    fi
                 done
-                sleep 5
-                if [ ! -f "$MODEL_DOWNLOAD_PATH" ]; then
-                    echo "[entrypoint] Downloading model from $MODEL_DOWNLOAD_URL to $MODEL_DOWNLOAD_PATH..."
-                    mkdir -p "$(dirname "$MODEL_DOWNLOAD_PATH")"
+                
+                if [ ! -d '/workspace/runpod-slim/ComfyUI' ]; then
+                    echo '[entrypoint] ERROR: ComfyUI directory not found after waiting. Download aborted.'
+                    exit 1
+                fi
+                
+                echo '[entrypoint] ComfyUI directory found. Waiting additional 15 seconds for full initialization...'
+                sleep 15
+                
+                if [ ! -f '$MODEL_DOWNLOAD_PATH' ]; then
+                    echo '[entrypoint] Starting model download from $MODEL_DOWNLOAD_URL to $MODEL_DOWNLOAD_PATH...'
+                    mkdir -p \"\$(dirname '$MODEL_DOWNLOAD_PATH')\"
+                    
                     if command -v curl >/dev/null 2>&1; then
-                        curl -L --progress-bar -o "$MODEL_DOWNLOAD_PATH" "$MODEL_DOWNLOAD_URL" 2>&1 && echo "[entrypoint] Model download completed successfully." || echo "[entrypoint] Model download failed."
+                        if curl -L --progress-bar -o '$MODEL_DOWNLOAD_PATH' '$MODEL_DOWNLOAD_URL' 2>&1; then
+                            echo '[entrypoint] Model download completed successfully!'
+                        else
+                            echo '[entrypoint] ERROR: Model download failed!'
+                            exit 1
+                        fi
                     elif command -v wget >/dev/null 2>&1; then
-                        wget --progress=bar:force -O "$MODEL_DOWNLOAD_PATH" "$MODEL_DOWNLOAD_URL" 2>&1 && echo "[entrypoint] Model download completed successfully." || echo "[entrypoint] Model download failed."
+                        if wget --progress=bar:force -O '$MODEL_DOWNLOAD_PATH' '$MODEL_DOWNLOAD_URL' 2>&1; then
+                            echo '[entrypoint] Model download completed successfully!'
+                        else
+                            echo '[entrypoint] ERROR: Model download failed!'
+                            exit 1
+                        fi
+                    else
+                        echo '[entrypoint] ERROR: Neither curl nor wget available for download!'
+                        exit 1
                     fi
                 else
-                    echo "[entrypoint] Model file already exists at $MODEL_DOWNLOAD_PATH. Skipping download."
+                    echo '[entrypoint] Model file already exists at $MODEL_DOWNLOAD_PATH. Skipping download.'
                 fi
-            ) &
+            " > /proc/1/fd/1 2>&1 &
+            echo "[entrypoint] Background download process started with PID: $!"
+        else
+            echo "[entrypoint] MODEL_DOWNLOAD_URL or MODEL_DOWNLOAD_PATH not set. Skipping background download."
         fi
         exec /start.sh
     else
