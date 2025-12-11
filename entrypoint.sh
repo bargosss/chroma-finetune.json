@@ -32,9 +32,16 @@ else
 fi
 
 echo "[entrypoint] Starting base image startup script..."
+echo "[entrypoint] DEBUG: MODEL_DOWNLOAD_URL='$MODEL_DOWNLOAD_URL'"
+echo "[entrypoint] DEBUG: MODEL_DOWNLOAD_PATH='$MODEL_DOWNLOAD_PATH'"
+echo "[entrypoint] DEBUG: Number of args: $#"
 
 if [ $# -eq 0 ]; then
+    echo "[entrypoint] DEBUG: No arguments provided, checking for /start.sh"
     if [ -f "/start.sh" ]; then
+        echo "[entrypoint] DEBUG: /start.sh exists, checking download variables..."
+        echo "[entrypoint] DEBUG: MODEL_DOWNLOAD_URL check: [ -n '$MODEL_DOWNLOAD_URL' ] = $([ -n "$MODEL_DOWNLOAD_URL" ] && echo "true" || echo "false")"
+        echo "[entrypoint] DEBUG: MODEL_DOWNLOAD_PATH check: [ -n '$MODEL_DOWNLOAD_PATH' ] = $([ -n "$MODEL_DOWNLOAD_PATH" ] && echo "true" || echo "false")"
         if [ -n "$MODEL_DOWNLOAD_URL" ] && [ -n "$MODEL_DOWNLOAD_PATH" ]; then
             echo "[entrypoint] Model download will happen after ComfyUI is initialized..."
             echo "[entrypoint] Model URL: $MODEL_DOWNLOAD_URL"
