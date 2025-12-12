@@ -18,7 +18,12 @@ else
     echo "[entrypoint] MODEL_URL is set: $MODEL_URL"
     URL_WITHOUT_QUERY="${MODEL_URL%%\?*}"
     FILENAME=$(basename "$URL_WITHOUT_QUERY")
-    
+
+    # If no extension is present, default to .safetensors so ComfyUI can detect it
+    if [[ "$FILENAME" != *.* ]]; then
+        FILENAME="${FILENAME}.safetensors"
+    fi
+
     if [ -z "$FILENAME" ] || [ "$FILENAME" = "/" ]; then
         FILENAME="model.safetensors"
     fi
